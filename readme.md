@@ -2,8 +2,9 @@
 
 
 This project is a demonstration of how hidden form fields can be unintentionally filled using the browser's autofill feature, posing a significant security risk. Users are often unaware that their sensitive data may be exposed to malicious websites by this mechanism.
-
-How Autofill Works and the Risks
+## Live Demo
+* View the project in action: [Browser Autofill Phishing Demo](https://browser-phishing.netlify.app/)
+## How Autofill Works and the Risks
 How Autofill Operates
 Browsers like Google Chrome, Safari, and Firefox use autofill to simplify form completion by storing user information like name, email, address, and payment details. When a user interacts with an input field, the browser identifies matching stored data and fills out all visible and some hidden fields.
 
