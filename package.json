@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anttiviljami/browser-autofill-phishing.git"
+    "url": "git+https://github.com/Kowshike/Browser-auto-phishing"
   },
   "author": "Viljami Kuosmanen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anttiviljami/browser-autofill-phishing/issues"
+    "url": "https://github.com/Kowshike/Browser-auto-phishing"
   },
-  "homepage": "https://github.com/anttiviljami/browser-autofill-phishing#readme"
+  "homepage": "https://github.com/Kowshike/Browser-auto-phishing/blob/main/readme.md"
 }
